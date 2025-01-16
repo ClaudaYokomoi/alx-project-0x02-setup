@@ -1,6 +1,7 @@
 export interface CardProps {
     title: string;
     content: string;
+    userId: number;
   }
   
   export interface ButtonProps {
@@ -9,3 +10,10 @@ export interface CardProps {
     onClick?: () => void; 
     children: React.ReactNode; 
   }
+  // interfaces/index.ts
+export interface PostProps {
+    title: string;
+    content: string;
+    userId: number;
+  }
+  
