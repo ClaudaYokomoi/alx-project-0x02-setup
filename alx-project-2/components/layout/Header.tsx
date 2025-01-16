@@ -1,15 +1,26 @@
-// components/layout/Header.tsx
-
 import React from 'react';
 import Link from 'next/link';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
-    <header>
+    <header className="bg-gray-800 text-white p-4">
       <nav>
-        <ul>
-          <li><Link href="/home">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
+        <ul className="flex space-x-6">
+          <li>
+            <Link href="/home">
+              <span className="hover:text-blue-400">Home</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <span className="hover:text-blue-400">About</span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts">
+              <span className="hover:text-blue-400">Posts</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

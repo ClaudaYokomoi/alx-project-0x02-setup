@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import PostModal from '../components/common/PostModal';
+import Header from '../components/layout/Header'; // Import Header
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,6 +17,7 @@ const Home = () => {
 
   return (
     <div>
+      <Header /> {/* Add Header */}
       <h1>Home Page</h1>
       <button onClick={openModal}>Create Post</button>
 

@@ -3,7 +3,12 @@
 import React from 'react';
 import { ButtonProps } from '../../interfaces';
 
-const Button: React.FC<ButtonProps> = ({ size, shape, onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({
+  size = 'medium',  
+  shape = 'rounded-md',  
+  onClick,
+  children,
+}) => {
   // Define className based on size and shape props
   const sizeClasses = {
     small: 'px-4 py-2 text-sm',
