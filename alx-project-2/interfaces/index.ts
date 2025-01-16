@@ -10,10 +10,19 @@ export interface CardProps {
     onClick?: () => void; 
     children: React.ReactNode; 
   }
-  // interfaces/index.ts
+  
 export interface PostProps {
     title: string;
     content: string;
     userId: number;
+  }
+  export interface UserProps {
+    name: string;
+    email: string;
+    address: {
+      street: string;
+      city: string;
+      zipcode: string;
+    };
   }
   
