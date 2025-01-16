@@ -1,9 +1,17 @@
 // components/layout/Header.tsx
 
+import React from 'react';
+import Link from 'next/link';
+
 const Header = () => {
   return (
-    <header className="bg-blue-600 text-white p-4">
-      <h1 className="text-xl">Welcome to ALX Project 2</h1>
+    <header>
+      <nav>
+        <ul>
+          <li><Link href="/home">Home</Link></li>
+          <li><Link href="/about">About</Link></li>
+        </ul>
+      </nav>
     </header>
   );
 };
