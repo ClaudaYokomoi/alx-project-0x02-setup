@@ -1,25 +1,39 @@
-import React from 'react';
-import Card from '../components/common/Card';
+// pages/home.tsx
+
+import { useState } from 'react';
+import PostModal from '../components/common/PostModal';
 
 const Home = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState<{ title: string; content: string }[]>([]);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const handlePostSubmit = (title: string, content: string) => {
+    setPosts((prevPosts) => [...prevPosts, { title, content }]);
+  };
+
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
-      
-      <Card
-        title="Card 1"
-        content="This is the content of the first card. It can be anything!"
+      <h1>Home Page</h1>
+      <button onClick={openModal}>Create Post</button>
+
+      <PostModal 
+        isOpen={isModalOpen} 
+        closeModal={closeModal} 
+        onSubmit={handlePostSubmit} 
       />
-      
-      <Card
-        title="Card 2"
-        content="This is the content of the second card. You can add more content here!"
-      />
-      
-      <Card
-        title="Card 3"
-        content="The third card is here. You can keep adding different content!"
-      />
+
+      <div>
+        <h2>Posts</h2>
+        {posts.map((post, index) => (
+          <div key={index}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
