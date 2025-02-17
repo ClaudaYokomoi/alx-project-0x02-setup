@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardProps } from '../../interfaces';
+import { type CardProps } from '../../interfaces'; 
 
 const Card: React.FC<CardProps> = ({ title, content }) => {
   return (
@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = ({ title, content }) => {
   );
 };
 
-// Optional: Add some simple styling for the card
+
 const cardStyle = {
   border: '1px solid #ccc',
   padding: '16px',

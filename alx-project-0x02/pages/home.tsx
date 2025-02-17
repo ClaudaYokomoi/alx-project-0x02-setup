@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import PostModal from '../components/common/PostModal';
 import Header from '../components/layout/Header'; // Import Header
+import Card from '@/components/common/Card'; // Import Card component
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,6 +37,9 @@ const Home = () => {
           </div>
         ))}
       </div>
+
+      {/* Use the Card component here */}
+      <Card title="Example Card" content="This is an example card content." />
     </div>
   );
 };
